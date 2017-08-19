@@ -17,61 +17,55 @@ import javax.swing.text.NumberFormatter;
  * @author BalaH-RiG
  */
 
-class FormattedInputBox extends JFormattedTextField implements KeyListener{
-   
-    public FormattedInputBox(int i){
-        super(getFormat(i));
-        this.setHorizontalAlignment(FormattedInputBox.CENTER);
-        this.setFont(new Font("Comic Sans MS",Font.BOLD,50-i-i));
-        
-    }
-    public FormattedInputBox(){
-        super(getFormat());
-        this.setHorizontalAlignment(FormattedInputBox.CENTER);
-        this.addKeyListener(this);
-    }
+//Youniss did this so IDK
+public class FormattedInputBox extends JFormattedTextField implements KeyListener{
+	/**@param int i is used to specify the size of the magicSquare game,
+	 * if i = -1, then max allowed value is Integer.MAX_VALUE*/
+	public int row=-1, col=-1;
 
-    public static NumberFormatter getFormat(int i)
-    {
-        NumberFormat format = NumberFormat.getInstance();
-        NumberFormatter formatter = new NumberFormatter(format);
-        formatter.setValueClass(Integer.class);
-        formatter.setMinimum(1);
-        formatter.setMaximum(i*i);
-        formatter.setAllowsInvalid(false);
+	public FormattedInputBox(int i, int r, int c){
+		this(i);
+		this.row = r;
+		this.col = c;
+	}
+	public FormattedInputBox(int i){
+		super(getFormat(i));
+		this.addKeyListener(this);
+		this.setFont(new Font("Comic Sans MS", Font.BOLD, 50-i*2));
 
-        return formatter;
-    }
-    public static NumberFormatter getFormat()
-    {
-        NumberFormat format = NumberFormat.getInstance();
-        NumberFormatter formatter = new NumberFormatter(format);
-        formatter.setValueClass(Integer.class);
-        formatter.setMinimum(1);
-        formatter.setMaximum(Integer.MAX_VALUE);
-        formatter.setAllowsInvalid(false);
+		this.setHorizontalAlignment(FormattedInputBox.CENTER);
+	}
 
-        return formatter;
-    }
+	public static NumberFormatter getFormat(int i) {
+		NumberFormat format = NumberFormat.getInstance();
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
 
-    @Override
-    public void keyTyped(KeyEvent e) {}
+		formatter.setMinimum(1);
+		if(i==-1) formatter.setMaximum(Integer.MAX_VALUE);
+		else	  formatter.setMaximum(i*i);
 
-    @Override
-    public void keyPressed(KeyEvent ke) {
-    
-                        if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE||ke.getKeyCode() ==KeyEvent.VK_DELETE)
-                        {
-                            FormattedInputBox inputBox = (FormattedInputBox) ke.getComponent();
-                            try{
-                                // Clear the text field if the number is 1 digit or less
-                                if(Integer.parseInt(inputBox.getText()) <= 9)
-                                    inputBox.setValue(null);
-                            }catch(Exception e){}
-                        }
-                    }
+		return formatter;
+	}
 
-    @Override
-    public void keyReleased(KeyEvent e) {}
+	@Override
+	public void keyTyped(KeyEvent e) {}
+
+	@Override
+	public void keyPressed(KeyEvent ke) {
+
+		if(ke.getKeyCode() == KeyEvent.VK_BACK_SPACE||ke.getKeyCode() ==KeyEvent.VK_DELETE)
+		{
+			FormattedInputBox inputBox = (FormattedInputBox) ke.getComponent();
+			try{
+				// Clear the text field if the number is 1 digit or less
+				if(Integer.parseInt(inputBox.getText()) <= 9)
+					inputBox.setValue(null);
+			}catch(Exception e){}
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {}
 }
-
