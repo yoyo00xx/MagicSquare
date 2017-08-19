@@ -98,7 +98,7 @@ public class AboutWindow extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
            
-                    Desktop.getDesktop().browse(new URL("http://www.google.com/").toURI());
+                    Desktop.getDesktop().browse(new URL("https://github.com/yoyo00xx/MagicSquare").toURI());
                 } catch(Exception e){}
     }//GEN-LAST:event_jButton1ActionPerformed
 
