@@ -30,9 +30,13 @@ public class FormattedInputBox extends JFormattedTextField implements KeyListene
 	}
 	public FormattedInputBox(int i){
 		super(getFormat(i));
-		this.addKeyListener(this);
-		this.setFont(new Font("Comic Sans MS", Font.BOLD, 50-i*2));
-
+                this.setFont(new Font("Comic Sans MS", Font.BOLD, 50-i*2));
+                this.setHorizontalAlignment(FormattedInputBox.CENTER);
+	}
+        public FormattedInputBox(){
+		super(getFormat(-1));
+                this.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
+                this.addKeyListener(this);
 		this.setHorizontalAlignment(FormattedInputBox.CENTER);
 	}
 
@@ -43,7 +47,11 @@ public class FormattedInputBox extends JFormattedTextField implements KeyListene
 		formatter.setAllowsInvalid(false);
 
 		formatter.setMinimum(1);
-		if(i==-1) formatter.setMaximum(Integer.MAX_VALUE);
+		if(i==-1) 
+                {
+                    
+                    formatter.setMaximum(Integer.MAX_VALUE);
+                }
 		else	  formatter.setMaximum(i*i);
 
 		return formatter;

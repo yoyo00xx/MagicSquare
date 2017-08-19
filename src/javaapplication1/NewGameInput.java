@@ -33,7 +33,7 @@ public class NewGameInput extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jFormattedTextField1 = new FormattedInputBox(-1);
+        jFormattedTextField1 = new FormattedInputBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Size Input");
@@ -43,6 +43,7 @@ public class NewGameInput extends javax.swing.JFrame {
         jLabel1.setText("Input the size of the magic sqaure game");
 
         jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jFormattedTextField1.setText(null);
         jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFormattedTextField1ActionPerformed(evt);
@@ -77,7 +78,7 @@ public class NewGameInput extends javax.swing.JFrame {
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
                 int newSize;
-
+                //jFormattedTextField1.addKeyListener();
                 newSize = Integer.parseInt(jFormattedTextField1.getText());
 
                 if(!(newSize>2&&newSize%2!=0)){

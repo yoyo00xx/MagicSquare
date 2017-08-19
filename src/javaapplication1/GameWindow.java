@@ -419,12 +419,7 @@ public class GameWindow extends javax.swing.JFrame implements KeyListener, Focus
 		case KeyEvent.VK_RIGHT:
 			if(activeCol<NewGameInput.N-1) activeCol++;	break;
 
-		case KeyEvent.VK_DELETE:
-		case KeyEvent.VK_BACK_SPACE:
-			// Clear the text field if the number is 1 digit or less
-			if(inputBox.getText().length() <= 1)
-				inputBox.setValue(null);
-			break;
+		
 		}
 		textFields[activeRow][activeCol].requestFocusInWindow();
 	}
@@ -555,7 +550,7 @@ public class GameWindow extends javax.swing.JFrame implements KeyListener, Focus
 				for (int j = 0; j < NewGameInput.N; j++) {
 					textFields[i][j].setEditable(true);
 					textFields[i][j].addKeyListener(textFields[i][j]);
-					textFields[i][j].setValue(null);
+                                        textFields[i][j].setValue(null);
 					resetTimer();
 					timer = true;
 					startStopwatch();
@@ -636,6 +631,12 @@ public class GameWindow extends javax.swing.JFrame implements KeyListener, Focus
 						livesRemaining--;
 						checked = true;
 						timer = false;
+                                                for (int i = 0; i < NewGameInput.N; i++)	
+						for (int j = 0; j < NewGameInput.N; j++){
+							textFields[i][j].setEditable(false);
+							textFields[i][j].removeKeyListener(textFields[i][j]);
+							
+						}
 						GameOver gameOver = new GameOver();
 						gameOver.setVisible(true);
 						break;
