@@ -90,7 +90,7 @@ public class NewGameInput extends javax.swing.JFrame {
                 this.dispose();
                 
                 GameWindow game = new GameWindow();
-                GameWindow.lifesRemaining = 3;
+                GameWindow.livesRemaining = 3;
                 GameWindow.checked = false;
                 game.setVisible(true);
                 

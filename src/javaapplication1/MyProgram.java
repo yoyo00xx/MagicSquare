@@ -79,8 +79,10 @@ public class MyProgram {
         }
         for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++){
                 
-              textFields[i][j].setForeground(Color.BLACK);
+              textFields[i][j].setForeground(Color.DARK_GRAY);
+              GameWindow.boxColor = Color.WHITE;
               textFields[i][j].setBackground(Color.WHITE);
+              GameWindow.fontColor = Color.DARK_GRAY;
               textFields[i][j].repaint();
             }
     }

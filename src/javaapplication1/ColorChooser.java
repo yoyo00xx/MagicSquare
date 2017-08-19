@@ -16,7 +16,7 @@ import static javaapplication1.GameWindow.textFields;
 public class ColorChooser extends javax.swing.JFrame {
     static boolean backGround = false;
      static boolean font = false;
-     static Color boxColor,fontColor;
+     
     
     /**
      * Creates new form colorChooser
@@ -106,12 +106,12 @@ public class ColorChooser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       boxColor = jColorChooser1.getColor();
+       GameWindow.boxColor = jColorChooser1.getColor();
        backGround = true;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       fontColor = jColorChooser1.getColor();
+       GameWindow.fontColor = jColorChooser1.getColor();
        font = true;
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -121,7 +121,7 @@ public class ColorChooser extends javax.swing.JFrame {
         {
             for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++){
                 
-              textFields[i][j].setForeground(fontColor);
+              textFields[i][j].setForeground(GameWindow.fontColor);
                 textFields[i][j].repaint();
             }
         
@@ -129,7 +129,7 @@ public class ColorChooser extends javax.swing.JFrame {
         if(backGround)
         {
             for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++){
-              textFields[i][j].setBackground(boxColor);
+              textFields[i][j].setBackground(GameWindow.boxColor);
               textFields[i][j].repaint();
             }
         
