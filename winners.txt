@@ -1,0 +1,4 @@
+dfgdfg 10 3
+444 15 3
+fgfgfg 18 3
+boki 40 3
