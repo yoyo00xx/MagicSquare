@@ -21,8 +21,8 @@ public class MyProgram {
     public static void main(String[] args )
     {
         
-        Program x = new Program();
-        x.setVisible(true);
+        (new Program()).setVisible(true);
+        
         
     }
     public static void systemTheme(){

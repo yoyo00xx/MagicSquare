@@ -124,7 +124,7 @@ public class Program extends javax.swing.JFrame {
                         
                         Scanner saveReader = new Scanner(chooser.getSelectedFile().getAbsoluteFile());
                         try{
-                            GameWindow.lifesRemaining = saveReader.nextInt();
+                            GameWindow.livesRemaining = saveReader.nextInt();
                             NewGameInput.N = saveReader.nextInt();
                             GameWindow.savedTime = saveReader.nextInt();
                             GameWindow game = new GameWindow();

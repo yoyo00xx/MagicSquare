@@ -97,7 +97,7 @@ public class SaveWindow extends javax.swing.JFrame {
             PrintWriter file = new PrintWriter(new File(path+"_SaveFile.txt"));
             
             data = new int[NewGameInput.N][NewGameInput.N];
-            file.print(GameWindow.lifesRemaining+" "+NewGameInput.N+" "+(GameWindow.savedTime+GameWindow.timePassedInSeconds)+" ");
+            file.print(GameWindow.livesRemaining+" "+NewGameInput.N+" "+(GameWindow.savedTime+GameWindow.timePassedInSeconds)+" ");
         for (int i = 0; i < NewGameInput.N; i++) {
             for (int j = 0; j < NewGameInput.N; j++) {
                 try {

@@ -27,7 +27,7 @@ public class GameWindow extends javax.swing.JFrame {
     static boolean started = false;
     static ArrayList<Winners> winnerList = new ArrayList<Winners>();
     static int[][] data;
-    static int lifesRemaining = 3;
+    static int livesRemaining = 3;
     static String name = "";
     static long timePassedInSeconds;
     static long savedTime = 0;
@@ -190,7 +190,7 @@ public class GameWindow extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Consolas", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Lifes:");
+        jLabel9.setText("Lives:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -391,7 +391,7 @@ public class GameWindow extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(!started){
-            switch(lifesRemaining){
+            switch(livesRemaining){
                     case 3:
                     {
                        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
@@ -421,7 +421,7 @@ public class GameWindow extends javax.swing.JFrame {
                 jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
                 jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
                 jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
-                lifesRemaining = 3;
+                livesRemaining = 3;
                 
                 
                 break;
@@ -446,7 +446,7 @@ public class GameWindow extends javax.swing.JFrame {
         }
         else if(checked)
         {
-            switch(lifesRemaining){
+            switch(livesRemaining){
                     case 3:
                     {
                        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
@@ -476,7 +476,7 @@ public class GameWindow extends javax.swing.JFrame {
                 jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
                 jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
                 jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Heart_Outline_48px.png")));
-                lifesRemaining = 3;
+                livesRemaining = 3;
                 
                 
                 break;
@@ -520,7 +520,7 @@ public class GameWindow extends javax.swing.JFrame {
                 jLabel4.setForeground(Color.GREEN);
                 jLabel4.setText("Correct");
                 jLabel4.repaint();
-                lifesRemaining = 3;
+                livesRemaining = 3;
                 for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++)
                 {
                     textFields[i][j].removeKeyListener(textFields[i][j]);
@@ -554,25 +554,25 @@ public class GameWindow extends javax.swing.JFrame {
             }
             else
             {
-                switch(lifesRemaining){
+                switch(livesRemaining){
                     case 3:
                     {
                         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Dislike_48px.png")));
-                lifesRemaining--;
+                livesRemaining--;
                 break;
                     }
                     case 2:
                 
                 {
                 jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Dislike_48px.png")));
-                lifesRemaining--;
+                livesRemaining--;
                 break;
                 }
                     case 1:
                
                 {
                 jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Dislike_48px.png")));
-                lifesRemaining--;
+                livesRemaining--;
                 checked = true;
                 timer = false;
                 GameOver gameOver = new GameOver();
@@ -603,7 +603,7 @@ public class GameWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void windowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_windowClosing
-       if(started&&lifesRemaining!=0)
+       if(started&&livesRemaining!=0)
        {
         SaveWindow save = new SaveWindow();
        save.setVisible(true);
