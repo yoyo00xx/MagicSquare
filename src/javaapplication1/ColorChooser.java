@@ -44,6 +44,7 @@ public class ColorChooser extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Rubik's_Cube_32px_2.png"))); // NOI18N

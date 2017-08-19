@@ -23,7 +23,7 @@ class FormattedInputBox extends JFormattedTextField implements KeyListener{
         super(getFormat(i));
         this.setHorizontalAlignment(FormattedInputBox.CENTER);
         this.setFont(new Font("Comic Sans MS",Font.BOLD,50-i-i));
-        this.addKeyListener(this);
+        
     }
     public FormattedInputBox(){
         super(getFormat());

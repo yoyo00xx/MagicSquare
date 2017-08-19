@@ -48,8 +48,7 @@ public class GameWindow extends javax.swing.JFrame {
         for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++)
         {
             textFields[i][j] = new FormattedInputBox(NewGameInput.N);
-            FormattedInputBox formattedInputBoxLocal = textFields[i][j];
-            formattedInputBoxLocal.setEditable(false);
+            textFields[i][j].setEditable(false);
             jPanel1.add(textFields[i][j]);
            
         }
@@ -491,6 +490,7 @@ public class GameWindow extends javax.swing.JFrame {
             checked = false;
             for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++)
             {
+                
                 textFields[i][j].setEditable(true);
                 textFields[i][j].addKeyListener(textFields[i][j]);
                 textFields[i][j].setValue(null);
@@ -523,8 +523,9 @@ public class GameWindow extends javax.swing.JFrame {
                 lifesRemaining = 3;
                 for (int i = 0; i < NewGameInput.N; i++)	for (int j = 0; j < NewGameInput.N; j++)
                 {
-                textFields[i][j].setEditable(false);
-                textFields[i][j].removeKeyListener(textFields[i][j]);
+                    textFields[i][j].removeKeyListener(textFields[i][j]);
+                    textFields[i][j].setEditable(false);
+                
                 }
         
                 

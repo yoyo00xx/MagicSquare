@@ -87,11 +87,15 @@ public class NewGameInput extends javax.swing.JFrame {
                 }
                 jFormattedTextField1.setBackground(Color.WHITE);
                 N = newSize;
-                this.dispose();
+                
                 
                 GameWindow game = new GameWindow();
+                
                 GameWindow.lifesRemaining = 3;
+                GameWindow.checked = false;
+                       
                 game.setVisible(true);
+                this.dispose();
                 
 
                

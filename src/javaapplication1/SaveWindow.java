@@ -41,6 +41,7 @@ public class SaveWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Confirmation Window");
+        setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Colonna MT", 0, 36)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/icons8_Save_48px.png"))); // NOI18N
