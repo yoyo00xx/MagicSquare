@@ -21,7 +21,6 @@ public class NewGameInput extends javax.swing.JFrame {
     public NewGameInput() {
         initComponents();
         initializeIcon();
-        
     }
 
     /**
@@ -34,7 +33,7 @@ public class NewGameInput extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jFormattedTextField1 = new FormattedInputBox();
+        jFormattedTextField1 = new FormattedInputBox(-1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Size Input");
@@ -78,6 +77,7 @@ public class NewGameInput extends javax.swing.JFrame {
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
                 int newSize;
+
                 newSize = Integer.parseInt(jFormattedTextField1.getText());
 
                 if(!(newSize>2&&newSize%2!=0)){
@@ -87,15 +87,12 @@ public class NewGameInput extends javax.swing.JFrame {
                 }
                 jFormattedTextField1.setBackground(Color.WHITE);
                 N = newSize;
-                
+                this.dispose();
                 
                 GameWindow game = new GameWindow();
-                
-                GameWindow.livesRemaining = 3;
+                GameWindow.lifesRemaining = 3;
                 GameWindow.checked = false;
-                       
                 game.setVisible(true);
-                this.dispose();
                 
 
                
